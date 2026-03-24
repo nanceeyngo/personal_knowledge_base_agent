@@ -122,7 +122,7 @@ cd ..   # make sure you are in rag-knowledge-agent/ (repo root)
 docker-compose up --build
 ```
 
-The backend will be available at: **http://localhost:8000**
+The backend will be available at: **http://127.0.0.1:8000**
 
 To stop: press `Ctrl+C`, then run `docker-compose down`
 
@@ -271,7 +271,7 @@ The app will build and launch on your connected device or emulator.
 8. **Switch collections** — tap the back arrow to return to the collections list and select a different knowledge base
 
 ### Theme toggle:
-Tap the sun/moon icon in the top-right of the collections screen to switch between light and dark theme.
+Tap the sun/moon icon in the top-right of the collections screen to switch between light and dark theme. You can also toggle theme by tapping the settings icon (⚙) in the top-right of the collections and switching between light and dark theme buttons.
 
 ### Change backend URL:
 Tap the settings icon (⚙) in the top-right of the collections screen and update the Backend URL field.
