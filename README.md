@@ -339,11 +339,11 @@ The evaluation suite tests the RAG agent against 5 ground-truth Q&A pairs and re
 # In one terminal:
 cd backend
 source venv/bin/activate
-uvicorn main:app --port 8000
+uvicorn main:app --reload
 ```
 
 ### Step 2 — Create a collection and upload your test documents
-You can do this via the Flutter app, the Swagger UI at `http://localhost:8000/docs`, or the CLI:
+You can do this via the Flutter app, the Swagger UI at `http://127.0.0.1:8000/docs`, or the CLI:
 ```bash
 python cli.py new-collection "Eval Test"
 python cli.py ingest <collection_id> path/to/your/test_document.pdf
@@ -492,7 +492,7 @@ uvicorn main:app --reload
 ```
 
 **`Connection refused` in the Flutter app**
-- Confirm the backend is running: visit `http://localhost:8000/health` in your browser
+- Confirm the backend is running: visit `http://127.0.0.1:8000/health` in your browser
 - If using an Android emulator, the URL must be `http://10.0.2.2:8000` (not `localhost`)
 - If using a physical device, use your machine's local IP address (find it with `ipconfig` on Windows or `ifconfig` on Mac/Linux)
 - Check the backend URL in the app settings (⚙ icon on the collections screen)
