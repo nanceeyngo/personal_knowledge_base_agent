@@ -1,0 +1,90 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# ── LangChain ecosystem ───────────────────────────────────────────────────────
+langchain>=0.1.17                    #0.2.6
+langchain-openai>=0.0.8                 #0.1.14
+langchain-community>=0.2.6
+langchain-huggingface>=0.0.3
+langchain-chroma>=0.1.2
+langchain-text-splitters>=0.2.2
+
+# ── Embeddings (HuggingFace local — no API key needed) ───────────────────────
+sentence-transformers>=3.0.0
+
+# ── Vector store ──────────────────────────────────────────────────────────────
+chromadb>=0.5.3
+
+# ── PDF parsing ───────────────────────────────────────────────────────────────
+pymupdf>=1.24.0
+
+# ── OCR (requires system packages — see README or use Docker) ─────────────────
+# If you cannot install system packages, OCR for scanned docs will be disabled.
+# pip install will succeed regardless; only scanned-image ingestion will fail.
+pytesseract>=0.3.10
+Pillow>=10.3.0
+pdf2image>=1.17.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.30
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+numpy>=1.26.0
+aiofiles>=23.2.0
+httpx>=0.27.0
+typer>=0.12.0
+rich>=13.7.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Web framework
+# fastapi==0.111.0
+# uvicorn[standard]==0.29.0
+# python-multipart==0.0.9
+
+# # LangChain
+# langchain==0.2.6
+# langchain-openai==0.1.14
+# langchain-community==0.2.6
+
+# # Vector store
+# chromadb==0.5.3
+
+# # Embeddings (HuggingFace local)
+# sentence-transformers==3.0.1
+# torch==2.3.1          # CPU build is fine; remove if using GPU image
+# torchvision==0.18.1
+
+# # PDF parsing
+# pymupdf==1.24.5        # fitz
+
+# # OCR  (Tesseract must also be installed at OS level: apt-get install tesseract-ocr)
+# pytesseract==0.3.10
+# Pillow==10.3.0
+# pdf2image==1.17.0      # poppler must be installed: apt-get install poppler-utils
+
+# # Database
+# sqlalchemy==2.0.30
+
+# # Utilities
+# python-dotenv==1.0.1
+# numpy==1.26.4
+# aiofiles==23.2.1
+# httpx==0.27.0

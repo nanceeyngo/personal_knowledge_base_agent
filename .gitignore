@@ -1,0 +1,88 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# RAG Knowledge Agent — .gitignore
+# Structure: .env, .env.example, requirements.txt, venv/ are inside backend/
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+backend/.env
+.env
+*.pem
+*.key
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+MANIFEST
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+env/
+ENV/
+
+# ── Type checking / testing ────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ── Data & uploads ─────────────────────────────────────────────────────────────
+# Never commit user-uploaded documents or vector store data
+backend/data/
+backend/chroma_data/
+
+# ── HuggingFace model cache ────────────────────────────────────────────────────
+# Models are downloaded automatically at runtime — do not commit them
+.cache/
+backend/.cache/
+
+# ── Flutter / Dart ─────────────────────────────────────────────────────────────
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/build/
+frontend/.pub-cache/
+frontend/.pub/
+frontend/ios/Pods/
+frontend/ios/.symlinks/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/key.properties
+frontend/ios/Flutter/Flutter.framework
+frontend/ios/Flutter/Flutter.podspec
+frontend/ios/Runner.xcworkspace/xcshareddata/
+frontend/macos/Flutter/GeneratedPluginRegistrant.swift
+*.class
+*.iml
+
+# ── IDEs ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Docker ─────────────────────────────────────────────────────────────────────
+docker-compose.override.yml
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+logs/
