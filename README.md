@@ -270,9 +270,6 @@ The app will build and launch on your connected device or emulator.
 7. **View conversation history** — tap the history icon (🕐) in the top-right to see and resume past conversations
 8. **Switch collections** — tap the back arrow to return to the collections list and select a different knowledge base
 
-### Theme toggle:
-Tap the sun/moon icon in the top-right of the collections screen to switch between light and dark theme.
-
 ### Change backend URL:
 Tap the settings icon (⚙) in the top-right of the collections screen and update the Backend URL field.
 
