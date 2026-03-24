@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
-
 import '../../core/dio_client.dart';
+import '../../main.dart';
 import '../../providers/collection_provider.dart';
 import '../../widgets/collection_card.dart';
 
@@ -17,6 +17,28 @@ class CollectionsScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Personal Knowledge Base'),
         actions: [
+          // ── Theme toggle button ───────────────────────────────────────────
+          Consumer(
+            builder: (_, ref, __) {
+              final mode = ref.watch(themeModeProvider);
+              return IconButton(
+                icon: Icon(
+                  mode == ThemeMode.dark
+                      ? Icons.light_mode_rounded
+                      : Icons.dark_mode_rounded,
+                ),
+                tooltip: mode == ThemeMode.dark
+                    ? 'Switch to light theme'
+                    : 'Switch to dark theme',
+                onPressed: () {
+                  ref.read(themeModeProvider.notifier).state =
+                  mode == ThemeMode.dark
+                      ? ThemeMode.light
+                      : ThemeMode.dark;
+                },
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.settings_outlined),
             tooltip: 'Settings',
@@ -214,6 +236,7 @@ class _SettingsSheetState extends ConsumerState<_SettingsSheet> {
   @override
   Widget build(BuildContext context) {
     final onSurface = Theme.of(context).colorScheme.onSurface;
+    final themeMode = ref.watch(themeModeProvider);
 
     return Padding(
       padding: EdgeInsets.only(
@@ -241,6 +264,51 @@ class _SettingsSheetState extends ConsumerState<_SettingsSheet> {
               style: TextStyle(
                   fontSize: 18, fontWeight: FontWeight.w600)),
           const Gap(20),
+          // ── Theme segmented button ──────────────────────────────────────
+          Row(
+            children: [
+              Icon(
+                themeMode == ThemeMode.dark
+                    ? Icons.dark_mode_rounded
+                    : Icons.light_mode_rounded,
+                size: 20,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              const Gap(10),
+              const Text('Theme',
+                  style: TextStyle(fontWeight: FontWeight.w500)),
+              const Spacer(),
+              SegmentedButton<ThemeMode>(
+                segments: const [
+                  ButtonSegment(
+                    value: ThemeMode.light,
+                    icon: Icon(Icons.light_mode_rounded, size: 16),
+                    label: Text('Light'),
+                  ),
+                  ButtonSegment(
+                    value: ThemeMode.dark,
+                    icon: Icon(Icons.dark_mode_rounded, size: 16),
+                    label: Text('Dark'),
+                  ),
+                ],
+                selected: {themeMode},
+                onSelectionChanged: (selection) {
+                  ref.read(themeModeProvider.notifier).state =
+                      selection.first;
+                },
+                style: ButtonStyle(
+                  textStyle: WidgetStateProperty.all(
+                    const TextStyle(fontSize: 12),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const Gap(20),
+          const Divider(),
+          const Gap(12),
+
+          // ── Backend URL ─────────────────────────────────────────────────
           const Text('Backend URL',
               style: TextStyle(fontWeight: FontWeight.w500)),
           const Gap(8),

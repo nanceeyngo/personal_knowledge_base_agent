@@ -29,7 +29,7 @@ if errors:
 
 # ── App ───────────────────────────────────────────────────────────────────────
 app = FastAPI(
-    title="RAG Knowledge Agent",
+    title="Personal Knowledge Base Agent",
     description="Personal knowledge base powered by LangChain, ChromaDB, and OpenRouter",
     version="1.0.0",
 )

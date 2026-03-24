@@ -10,7 +10,7 @@ class AppConfig {
   // On a real device on the same WiFi, use your machine's local IP e.g:
   // static const String defaultBaseUrl = 'http://192.168.1.x:8000';
 
-  static const String appName = 'RAG Knowledge Agent';
+  static const String appName = 'Personal Knowledge Base Agent';
   static const String appVersion = '1.0.0';
 
   // API timeouts

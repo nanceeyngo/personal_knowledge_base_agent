@@ -28,7 +28,7 @@ def health():
 @router.get("/")
 def root():
     return {
-        "name": "RAG Knowledge Agent API",
+        "name": "Personal Knowledge Base Agent API",
         "version": "1.0.0",
         "docs": "/docs",
         "health": "/health",

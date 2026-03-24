@@ -1,4 +1,4 @@
-# RAG Knowledge Agent
+# Personal Knowledge Base Agent
 
 A full-stack personal knowledge base AI agent. Upload your documents, ask questions in natural language, and receive answers grounded in your own files — with source references and token-by-token streaming.
 
@@ -9,7 +9,7 @@ A full-stack personal knowledge base AI agent. Upload your documents, ask questi
 ## Repository Structure
 
 ```
-rag-knowledge-agent/
+personal-knowledge-base-agent/
 ├── backend/                  ← FastAPI + LangChain RAG backend
 │   ├── app/
 │   │   ├── api/              ← Route handlers (collections, documents, chat, health)
@@ -83,8 +83,8 @@ Choose **one** of these two approaches:
 
 ### Step 2 — Clone and navigate
 ```bash
-git clone https://github.com/YOUR_USERNAME/rag-knowledge-agent.git
-cd rag-knowledge-agent
+git clone https://github.com/nanceeyngo/personal_knowledge_base_agent.git
+cd personal-knowledge-base-agent
 ```
 
 ### Step 3 — Create your environment file
@@ -219,24 +219,24 @@ static const String defaultBaseUrl = 'https://your-app.railway.app';
 
 > To find your machine's local IP on Windows: run `ipconfig` in Command Prompt and look for `IPv4 Address`. On macOS/Linux: run `ifconfig` or `ip addr`.
 
-## ⚠️ Web (Browser) Usage Notice
+### ⚠️ Web (Browser) Usage Notice
 
 This application is **primarily built for mobile (Android/iOS)** and is not fully supported on web browsers (e.g., Chrome).
 
-### If you run the app on web:
+**If you run the app on web:**
 
 - Update the API base URL in settings:
   - Replace `10.0.2.2` with `localhost`  
     Example: `http://localhost:8000`
   - This allows the frontend to communicate with the backend when running locally
 
-### Limitations on Web
+**Limitations on Web**
 
 - ❌ **File uploads are not supported**
   - The `file_picker` package behaves differently on web
   - It returns **file bytes instead of file paths**, which is incompatible with the current upload implementation
 
-### Summary
+**Summary**
 
 - ✅ Chat functionality may work (after updating base URL)
 - ❌ Document upload will not work
@@ -269,6 +269,9 @@ The app will build and launch on your connected device or emulator.
 6. **Follow-up questions** — just keep typing. The agent maintains full conversation context
 7. **View conversation history** — tap the history icon (🕐) in the top-right to see and resume past conversations
 8. **Switch collections** — tap the back arrow to return to the collections list and select a different knowledge base
+
+### Theme toggle:
+Tap the sun/moon icon in the top-right of the collections screen to switch between light and dark theme.
 
 ### Change backend URL:
 Tap the settings icon (⚙) in the top-right of the collections screen and update the Backend URL field.
@@ -409,7 +412,7 @@ python evals/run_evals.py --collection <your_collection_id>
 Running evals against collection: ae16cd52-...
 API: http://localhost:8000
 
-RAG Agent Evaluation Report  —  5/5 passed
+Personal Knowledge Base Agent Evaluation Report  —  5/5 passed
 
 ┌─────┬──────────────────────────────┬──────────┬────────┬────────┐
 │ ID  │ Description                  │ KW Score │ Source │ Result │

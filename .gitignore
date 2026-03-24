@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════════════════════
-# RAG Knowledge Agent — .gitignore
+# Personal Knowledge Base Agent — .gitignore
 # Structure: .env, .env.example, requirements.txt, venv/ are inside backend/
 # ══════════════════════════════════════════════════════════════════════════════
 

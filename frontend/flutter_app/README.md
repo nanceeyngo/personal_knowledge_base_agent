@@ -1,6 +1,6 @@
-# RAG Knowledge Agent — Flutter App
+# Personal Knowledge Base Agent — Flutter App
 
-The mobile frontend for the RAG Knowledge Agent. Built with Flutter for Android using Riverpod state management and Dio for API communication.
+The mobile frontend for the Personal Knowledge Base Agent. Built with Flutter for Android using Riverpod state management and Dio for API communication.
 
 ---
 
@@ -170,13 +170,13 @@ The app ships with both light and dark themes. To change which theme loads by de
 
 ```dart
 // Default theme on app launch
-final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.dark);
+final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.light);
 //                                                         ^^^^^^^^^^^^^^^^
 // Change to ThemeMode.light to default to light theme
 // Or ThemeMode.system to follow the device system theme
 ```
 
-At runtime, tap the sun/moon icon on the collections screen to toggle without rebuilding.
+At runtime, tap the sun/moon icon on the collections screen to toggle without rebuilding. You can also toggle theme by tapping the settings icon (⚙) in the top-right of the collections and switching between light and dark theme buttons.
 
 ---
 
@@ -190,7 +190,7 @@ flutter pub get
 ```
 
 **App builds but shows "Connection refused" or network error**
-- Confirm the backend is running: open a browser on your computer and visit `http://localhost:8000/health`
+- Confirm the backend is running: open a browser on your computer and visit `http://127.0.0.1:8000/health`
 - Check that `config.dart` has the correct URL for your setup (see Configuration section above)
 - If using an emulator, the URL must start with `http://10.0.2.2:8000`, not `http://localhost:8000`
 - You can also change the URL at runtime: tap ⚙ on the collections screen

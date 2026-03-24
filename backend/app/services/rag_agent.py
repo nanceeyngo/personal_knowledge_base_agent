@@ -97,7 +97,7 @@ class RAGAgent:
             max_tokens=1024,
             default_headers={
                 "HTTP-Referer": "https://rag-knowledge-agent",
-                "X-Title": "RAG Knowledge Agent",
+                "X-Title": "Personal Knowledge Base Agent",
             },
         )
         print(f"[RAGAgent] Ready — model: {MODEL_NAME} via OpenRouter ✓")
@@ -309,7 +309,7 @@ class RAGAgent:
 #             max_tokens=1024,
 #             default_headers={
 #                 "HTTP-Referer": "https://rag-knowledge-agent",
-#                 "X-Title": "RAG Knowledge Agent",
+#                 "X-Title": "Personal Knowledge Base Agent",
 #             },
 #         )
 #         print(f"[RAGAgent] LLM ready: {MODEL_NAME} via OpenRouter ✓")

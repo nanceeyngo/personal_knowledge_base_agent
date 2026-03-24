@@ -1,5 +1,5 @@
 """
-cli.py  –  RAG Knowledge Agent CLI
+cli.py  –  Personal Knowledge Base Agent CLI
 ────────────────────────────────────
 Usage examples:
 
@@ -61,7 +61,7 @@ from datetime import datetime
 
 app_cli = typer.Typer(
     name="rag-agent",
-    help="RAG Knowledge Agent CLI",
+    help="Personal Knowledge Base Agent CLI",
     add_completion=False,
 )
 console = Console()
