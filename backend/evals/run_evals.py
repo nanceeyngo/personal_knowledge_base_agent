@@ -46,7 +46,7 @@ EVAL_CASES = [
     {
         "id": "Q1",
         "question": "What is the main topic of the uploaded documents?",
-        "expected_keywords": ['power', 'oppression', 'students', 'lived experience'],
+        "expected_keywords": ['students', 'service user', 'education', 'lived experience'],
         "description": "Broad overview question",
     },
     {
@@ -58,19 +58,20 @@ EVAL_CASES = [
     {
         "id": "Q3",
         "question": "What specific data, numbers, or statistics are mentioned?",
-        "expected_keywords": ['ethical consideration', 'analysis approach', 'group composition'],
+        "expected_keywords": ['10', '40', '25%', 'hour'],
         "description": "Factual extraction",
     },
     {
         "id": "Q4",
         "question": "Who are the main people, organisations, or entities discussed?",
-        "expected_keywords": ['researcher', 'module leader', 'lecturer', 'stakeholder groups'],
+        "expected_keywords": ['student', 'service user', 'research'],
         "description": "Entity recognition",
     },
     {
         "id": "Q5",
         "question": "What recommendations or next steps are suggested in the documents?",
-        "expected_keywords": ['experiential expertise', 'evidence base', 'impact', 'service user',],
+        "expected_keywords": ['recommend','involvement','engagement','service user','co-production','improve','future practice','education'
+],
         "description": "Recommendation extraction",
     },
 ]

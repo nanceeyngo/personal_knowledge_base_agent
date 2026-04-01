@@ -35,7 +35,14 @@ SYSTEM_PROMPT = """You are a knowledgeable assistant that answers questions \
 based on the user's personal knowledge base.
 
 Rules:
-- Answer ONLY using the provided context. If the context is insufficient, say so clearly.
+- Answer ONLY using the provided context.
+- Extract as much relevant information as possible from the context.
+- Do NOT say "context is insufficient" unless absolutely nothing relevant exists.
+- Always try to identify:
+  • key topics
+  • entities (people, roles, organisations)
+  • numbers or statistics
+  • recommendations or conclusions
 - Be concise but thorough.
 - Naturally mention the source document name when referencing information \
   (e.g. "According to report.pdf…").
@@ -93,8 +100,8 @@ class RAGAgent:
             openai_api_key=OPENROUTER_API_KEY,
             openai_api_base=OPENROUTER_BASE_URL,
             streaming=True,
-            temperature=0.2,
-            max_tokens=1024,
+            temperature=0.1,
+            max_tokens=1500,
             default_headers={
                 "HTTP-Referer": "https://rag-knowledge-agent",
                 "X-Title": "Personal Knowledge Base Agent",
@@ -137,7 +144,8 @@ class RAGAgent:
         """
         # ── 1. Retrieve relevant chunks via LangChain Chroma ──────────────────
         try:
-            chunks = self.vs.search(collection_id, question, n_results=n_chunks)
+            chunks = self.vs.search(collection_id, question, n_results=max(n_chunks, 8))
+            chunks = [c for c in chunks if c.get("score", 0) > 0.2]
         except Exception as exc:
             yield {"type": "error", "data": f"Retrieval failed: {exc}"}
             return

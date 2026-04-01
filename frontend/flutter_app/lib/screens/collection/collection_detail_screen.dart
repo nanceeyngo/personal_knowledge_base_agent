@@ -199,15 +199,30 @@ class _CollectionDetailScreenState
     );
 
     if (confirmed == true && context.mounted) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => const AlertDialog(
+          content: Row(
+            children: [
+              CircularProgressIndicator(),
+              SizedBox(width: 16),
+              Expanded(child: Text('Reindexing... Please wait')),
+            ],
+          ),
+        ),
+      );
       try {
         final msg = await ref
             .read(documentsProvider(widget.collection.id).notifier)
             .reindex();
         if (context.mounted) {
+          Navigator.pop(context);
           _showSnack(context, msg ?? 'Re-indexed successfully ✓');
         }
       } catch (e) {
         if (context.mounted) {
+          Navigator.pop(context);
           _showSnack(context, 'Reindex failed: $e', isError: true);
         }
       }

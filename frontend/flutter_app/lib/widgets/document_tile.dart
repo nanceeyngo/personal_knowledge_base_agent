@@ -61,25 +61,31 @@ class DocumentTile extends StatelessWidget {
                 const SizedBox(height: 3),
                 Row(
                   children: [
-                    Text(
-                      document.fileSizeFormatted,
-                      style: TextStyle(
-                          color: onSurface.withOpacity(0.45),
-                          fontSize: 12),
+                    Expanded(
+                      child: Text(
+                        document.fileSizeFormatted,
+                        style: TextStyle(
+                            color: onSurface.withOpacity(0.45),
+                            fontSize: 12),
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Text(
-                      '${document.chunkCount} chunks',
-                      style: TextStyle(
-                          color: onSurface.withOpacity(0.45),
-                          fontSize: 12),
+                    Expanded(
+                      child: Text(
+                        '${document.chunkCount} chunks',
+                        style: TextStyle(
+                            color: onSurface.withOpacity(0.45),
+                            fontSize: 12),
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Text(
-                      timeago.format(document.createdAt),
-                      style: TextStyle(
-                          color: onSurface.withOpacity(0.45),
-                          fontSize: 12),
+                    Expanded(
+                      child: Text(
+                        timeago.format(document.createdAt),
+                        style: TextStyle(
+                            color: onSurface.withOpacity(0.45),
+                            fontSize: 12),
+                      ),
                     ),
                   ],
                 ),

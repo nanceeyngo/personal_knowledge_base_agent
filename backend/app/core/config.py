@@ -19,8 +19,8 @@ SQLITE_DB_PATH: str = os.getenv("SQLITE_DB_PATH", "./data/rag.db")
 
 # ── Ingestion ─────────────────────────────────────────────────────────────────
 RAG_DATA_DIR: str = os.getenv("RAG_DATA_DIR", "./data/uploads")
-CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", "500"))
-CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", "50"))
+CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", "800"))
+CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", "120"))
 MAX_CHUNKS_RETRIEVED: int = int(os.getenv("MAX_CHUNKS_RETRIEVED", "5"))
 
 # ── Server ────────────────────────────────────────────────────────────────────
